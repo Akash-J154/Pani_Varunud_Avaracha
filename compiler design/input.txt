@@ -1,10 +1,10 @@
-  FILE *input;
-    input=fopen("input.txt","r");
+//FILE * input;
+input = fopen('input.txt',"r");
     if(input==NULL)
     {
-        printf("the input file is empty\n");
+        printf(" the input file is empty\n ");
         exit(0);
     }
-    char words[1000];
-    fgets(input,1000,input);
-    printf("%s",input);
+char words[1000];
+fgets(input,1000,input);
+printf("%s",input);

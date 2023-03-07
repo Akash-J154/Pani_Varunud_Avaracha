@@ -2,20 +2,24 @@
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
+int check_keyword(char * c)
+{
+
+     if(!isalpha(c[0])&&c[0]!='_'){
+    return 1;}
+    for(int i=1;i<strlen(c);i++)
+    {
+        if(!isalpha(c[i])&&c[i]!='_'&&!isdigit(c[i])){
+        return 1;}
+    }
+    return 0;
+}
 int main()
 {
-    char input[20];
-    printf("enter the identifier\n");
-    scanf("%s",input);
-    if(!isalpha(input[0])&&input[0]!='_'){
-    printf("It is not a valid identifier");
-    exit(0);}
-    for(int i=0;i<sizeof(input);i++)
-    {
-        if(isalpha(input[i])&&input[i]!='_'&&isdigit(input[i])){
-        printf("It is not a valid identifier\n");
-        exit(0);}
-    }
-    printf("It is a valid identifier\n");
-
+    char *input="iuput";
+    // printf("enter the identifier\n");
+    // scanf("%s",input);
+    printf("%d",check_keyword(input));
+    if(check_keyword(input)==0)
+    printf("valid");
 }
